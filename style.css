@@ -20,6 +20,10 @@ h1, h2, h3 {
 
 a {
     color: #007BFF;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 
 /* Header */
@@ -64,18 +68,10 @@ header nav a {
 
 header nav a:hover {
     color: #007BFF;
+    text-decoration: none;
 }
 
-/* Sezioni Generali */
-main > section {
-    padding: 60px 0;
-}
-main > section:nth-of-type(odd){
-    background-color: #fff;
-}
-
-
-/* ---- HERO SECTION STYLES (HOMEPAGE) ---- */
+/* ---- HERO SECTION (HOMEPAGE) ---- */
 #hero {
     display: flex;
     align-items: center;
@@ -101,82 +97,36 @@ main > section:nth-of-type(odd){
     transition: background-color 0.3s;
     display: inline-block;
 }
-.cta-button:hover { background: #0056b3; }
+.cta-button:hover { background: #0056b3; text-decoration: none; }
 
-/* Sezione Servizi (Homepage) */
-#servizi { background-color: #fff; }
-#servizi h2 { text-align: center; margin-bottom: 40px; }
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.service-card {
-    background: #f4f4f4;
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.3s;
-}
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-.service-card h3 { color: #004080; margin-top: 0; }
-
-/* ---- STILI PAGINE INTERNE ---- */
-main { background-color: #fff; } /* Sfondo bianco per le pagine interne */
+/* ---- STILI PAGINE INTERNE GENERICI ---- */
+main { background-color: #fff; }
+main > .container { padding-top: 40px; padding-bottom: 40px; }
 .page-header {
     background-color: #f8f9fa;
-    padding: 40px 0;
+    padding: 40px 20px;
     margin-bottom: 40px;
     border-bottom: 1px solid #dee2e6;
 }
-.page-header h1 {
-    margin: 0;
-    text-align: center;
-}
+.page-header h1 { margin: 0; text-align: center; }
 
 .page-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 40px;
-    padding-top: 40px;
-    padding-bottom: 40px;
 }
-.main-content {
-    background-color: #fff;
-    padding: 20px;
-}
-.main-content ul {
-    list-style-type: square;
-    padding-left: 20px;
-}
+.main-content ul { list-style-type: square; padding-left: 20px; }
 
-.two-column-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-.column h2 {
-    border-bottom: 2px solid #007BFF;
-    padding-bottom: 10px;
-}
+/* Layout 2 colonne per Chi Siamo */
+.two-column-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.column h2 { border-bottom: 2px solid #007BFF; padding-bottom: 10px; }
 
-/* Sidebar */
-.sidebar {
-    position: sticky;
-    top: 120px; /* Altezza header + spazio */
-    align-self: flex-start;
-}
-
+/* ---- SIDEBAR ---- */
+.sidebar { position: sticky; top: 120px; align-self: flex-start; }
 .sidebar .action-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
     padding: 15px;
     margin-bottom: 15px;
     text-decoration: none;
@@ -185,13 +135,16 @@ main { background-color: #fff; } /* Sfondo bianco per le pagine interne */
     transition: all 0.3s;
     font-size: 1rem;
 }
+.sidebar .action-button:hover { text-decoration: none; }
 .sidebar .action-button .icon { margin-right: 10px; font-size: 1.2rem; }
 .action-button.call { background-color: #6c757d; color: #fff; }
 .action-button.call:hover { background-color: #5a6268; }
 .action-button.maps { background-color: #fff; color: #333; border: 1px solid #ddd; }
 .action-button.maps:hover { background-color: #f4f4f4; }
+.action-button.whatsapp-side { background-color: #25D366; color: #fff; }
+.action-button.whatsapp-side:hover { background-color: #1DA851; }
 
-/* Stili Società Trasparente */
+/* ---- STILI SOCIETÀ TRASPARENTE ---- */
 .button-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -202,13 +155,14 @@ main { background-color: #fff; } /* Sfondo bianco per le pagine interne */
     color: #fff;
     padding: 20px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     font-weight: 700;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    border: 2px solid #007BFF;
 }
-.transparent-button:hover { background-color: #0056b3; }
+.transparent-button:hover { background-color: #0056b3; border-color: #0056b3; text-decoration: none; }
 .transparent-button span { margin-right: 15px; font-size: 1.5rem; }
 
 .disclaimer-box {
@@ -226,86 +180,41 @@ main { background-color: #fff; } /* Sfondo bianco per le pagine interne */
     text-decoration: none;
     border-radius: 5px;
 }
+.disclaimer-button:hover { text-decoration: none; background-color: #5a6268; }
 
-/* Stili Pagina Contatti */
-.contact-bar {
-    display: flex;
-    background-color: #f8f9fa;
-}
-.contact-button {
-    flex: 1;
-    text-align: center;
-    padding: 20px;
-    text-decoration: none;
-    font-weight: 700;
-    color: #fff;
-    transition: opacity 0.3s;
-}
-.contact-button:hover { opacity: 0.9; }
+/* ---- STILI PAGINA CONTATTI ---- */
+.contact-bar { display: flex; background-color: #f8f9fa; }
+.contact-button { flex: 1; text-align: center; padding: 20px; text-decoration: none; font-weight: 700; color: #fff; transition: opacity 0.3s; }
+.contact-button:hover { opacity: 0.9; text-decoration: none; }
 .contact-button.call-main { background-color: #6c757d; }
 .contact-button.whatsapp { background-color: #25D366; }
-.contact-button.gmaps { background-color: #fff; color: #333; }
+.contact-button.gmaps { background-color: #fff; color: #333; border: 1px solid #ddd; }
 
-.contact-page-info {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
+.contact-page-info { padding-top: 60px; padding-bottom: 60px; }
 .contact-page-info h2 { text-align: center; margin-bottom: 40px; }
-.info-columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    text-align: center;
-}
-.full-width-map iframe {
-    display: block;
-    width: 100%;
-}
+.info-columns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
+.full-width-map iframe { display: block; width: 100%; border: 0; }
 
-/* ---- NUOVO FOOTER STYLES ---- */
+/* ---- FOOTER ---- */
 footer {
     background-color: #0d2438;
     color: #cdd3d8;
     padding: 60px 0 20px 0;
 }
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-}
-
-.footer-column h3 {
-    color: #fff;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #007BFF;
-}
-
+.footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.footer-column h3 { color: #fff; font-size: 1.1rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #007BFF; }
 .footer-column p, .footer-column li { font-size: 0.9rem; }
 .footer-column ul { list-style: none; padding: 0; }
 .footer-column ul li { margin-bottom: 10px; }
 .footer-column ul a { color: #cdd3d8; text-decoration: none; transition: color 0.3s; }
-.footer-column ul a:hover { color: #007BFF; }
+.footer-column ul a:hover { color: #007BFF; text-decoration: none; }
 
-.footer-bottom {
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #1a3a55;
-    font-size: 0.9rem;
-    color: #8a9aaa;
-}
+.footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1a3a55; font-size: 0.9rem; color: #8a9aaa; }
 
-
-/* Responsive per Cellulari */
+/* ---- RESPONSIVE DESIGN ---- */
 @media (max-width: 992px) {
-    .footer-grid {
+    .footer-grid, .info-columns {
         grid-template-columns: 1fr 1fr;
-    }
-    .info-columns {
-        grid-template-columns: 1fr;
     }
 }
 
@@ -318,13 +227,11 @@ footer {
     #hero { text-align: center; justify-content: center; }
     #hero h2 { font-size: 2.5rem; }
 
-    .two-column-layout, .page-container, .button-grid {
+    .two-column-layout, .page-container, .button-grid, .info-columns {
         grid-template-columns: 1fr;
     }
     .sidebar { position: static; margin-top: 40px; }
-
     .contact-bar { flex-direction: column; }
-
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
     .footer-column h3 { display: inline-block; border-bottom-width: 2px; }
 }
