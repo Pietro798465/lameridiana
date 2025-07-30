@@ -87,7 +87,7 @@ header nav a:hover {
     justify-content: flex-start;
     min-height: calc(90vh - 80px);
     padding: 0 5%;
-    background: linear-gradient(rgba(0, 64, 128, 0.7), rgba(0, 64, 128, 0.7)), url('https://images.unsplash.com/photo-1581091222045-72d939103a03?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 64, 128, 0.7), rgba(0, 64, 128, 0.7)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
     color: #fff;
 }
 
