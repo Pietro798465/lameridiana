@@ -8,9 +8,10 @@ body {
 }
 
 .container {
-    max-width: 1100px;
+    width: 90%; /* Occupa il 90% della larghezza disponibile */
+    max-width: 1100px; /* Ma non più di 1100px */
     margin: auto;
-    padding: 0 20px;
+    padding: 0;
 }
 
 h1, h2, h3 {
@@ -29,7 +30,7 @@ a:hover {
 /* Header */
 header {
     background: #0d2438; /* Blu scuro, come il footer */
-    padding: 1rem 0;
+    padding: 1rem 20px; /* Aggiunto padding per schermi stretti */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -39,6 +40,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%; /* Occupa tutta la larghezza dell'header */
 }
 
 header h1 {
@@ -108,27 +110,45 @@ header nav a:hover {
 }
 .cta-button:hover { background: #0056b3; text-decoration: none; }
 
-/* Sezione Servizi (Homepage) */
-#servizi { background-color: #fff; padding: 60px 0; }
-#servizi h2 { text-align: center; margin-bottom: 40px; }
-.service-grid {
+/* ---- NUOVA SEZIONE SERVIZI (HOMEPAGE) ---- */
+#servizi { 
+    background-color: #fff; 
+    padding: 60px 0; 
+}
+#servizi h2 { 
+    text-align: center; 
+    margin-bottom: 40px; 
+}
+.service-grid-colored {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
-.service-card {
-    background: #f4f4f4;
-    padding: 30px;
-    border: 1px solid #ddd;
+.service-box {
+    color: #fff;
+    padding: 40px 25px;
     border-radius: 8px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
-.service-card h3 { color: #004080; margin-top: 0; }
+.service-box .service-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+.service-box h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+.service-box p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
 
 /* ---- STILI PAGINE INTERNE GENERICI ---- */
 main { background-color: #fff; }
@@ -231,7 +251,7 @@ main > .container { padding-top: 40px; padding-bottom: 40px; }
 footer {
     background-color: #0d2438;
     color: #cdd3d8;
-    padding: 60px 0 20px 0;
+    padding: 60px 20px 20px 20px;
 }
 .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
 .footer-column h3 { color: #fff; font-size: 1.1rem; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #007BFF; }
@@ -261,6 +281,9 @@ footer {
 
     .two-column-layout, .page-container, .button-grid, .info-columns {
         grid-template-columns: 1fr;
+    }
+    .service-grid-colored {
+        gap: 10px;
     }
     .sidebar { position: static; margin-top: 40px; }
     .contact-bar { flex-direction: column; }
