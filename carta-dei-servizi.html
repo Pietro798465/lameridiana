@@ -86,13 +86,19 @@
         </div>
     </footer>
 
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const mainNav = document.getElementById('main-nav');
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-        });
-    </script>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+
+    menuToggle.addEventListener('click', () => {
+        // Invece di 'active', cambiamo la classe del NAV per farlo apparire/scomparire
+        if (mainNav.classList.contains('mobile-nav')) {
+            mainNav.classList.remove('mobile-nav');
+        } else {
+            mainNav.classList.add('mobile-nav');
+        }
+    });
+</script>
 
 </body>
 </html>
