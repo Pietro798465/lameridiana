@@ -98,8 +98,8 @@ header nav a:hover {
     bottom: 0;
     z-index: 1;
     background: 
-        linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(13, 36, 56, 1) 90%),
-        linear-gradient(rgba(0, 64, 128, 0.6), rgba(0, 64, 128, 0.6)),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(13, 36, 56, 1) 90%), /* Gradiente a scuro in basso */
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), /* Overlay più leggero e neutro */
         url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
 }
 
@@ -156,7 +156,7 @@ header nav a:hover {
     line-height: 1;
 }
 .service-box .service-icon svg {
-    stroke-width: 1.5; /* Spessore linee icone */
+    stroke-width: 1.5;
 }
 .service-box h3 {
     color: #fff;
