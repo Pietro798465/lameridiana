@@ -34,9 +34,9 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    display: flex; /* Aggiunto per allineare il pulsante hamburger */
-    align-items: center; /* Aggiunto per allineare il pulsante hamburger */
-    justify-content: space-between; /* Aggiunto per allineare il pulsante hamburger */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header .container {
@@ -95,7 +95,7 @@ header nav a:hover {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001; /* Sopra l'header */
+    z-index: 1001;
 }
 .menu-toggle .bar {
     width: 100%;
@@ -327,27 +327,28 @@ footer {
         text-align: left;
         font-size: 1rem;
         line-height: 1.2;
-        margin-right: auto; /* Spinge il menu hamburger a destra */
+        margin-right: 15px; /* Spazio tra titolo e hamburger */
     }
-    
     .menu-toggle {
         display: flex;
-        flex-shrink: 0; /* Impedisce al pulsante di rimpicciolirsi */
+        flex-shrink: 0;
     }
-
+    
+    /* Il menu di navigazione su desktop è nascosto */
     header nav {
-        display: none; /* Nascosto di default su mobile */
+        display: none;
     }
 
-    /* Stile per il menu quando è aperto */
+    /* Stile per il menu quando è aperto su mobile */
     .mobile-nav {
         display: block;
         position: absolute;
-        top: 100%; /* Appare subito sotto l'header */
+        top: 100%;
         left: 0;
         right: 0;
         background-color: #0d2438;
-        padding: 20px 0;
+        padding: 10px 0;
+        border-top: 1px solid #1a3a55;
     }
     .mobile-nav ul {
         flex-direction: column;
@@ -376,4 +377,4 @@ footer {
     .service-grid-colored {
         grid-template-columns: 1fr;
     }
-}
+}```
