@@ -46,17 +46,59 @@ header .container {
     width: 100%;
 }
 
+/* Nascondiamo l'H1 di base perché lo stilizziamo nel link */
 header h1 {
-    font-size: 1.3rem;
     margin: 0;
-    font-weight: 700;
-    color: #fff;
 }
 
-.logo-link, .logo-link:hover {
+.logo-link {
+    display: flex;
+    align-items: center;
     color: #fff;
     text-decoration: none;
 }
+.logo-link:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #007BFF; /* Colore di sfondo del cerchio */
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-right: 15px;
+    border: 2px solid #fff; /* Bordo bianco attorno al cerchio */
+}
+
+.logo-text-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-style: italic; /* Applica il corsivo come richiesto */
+    line-height: 1.2;
+}
+
+.logo-line-1, .logo-line-2 {
+    display: block; /* Mantiene le scritte su righe separate */
+}
+
+/* Su desktop nascondiamo le singole righe e mostriamo il testo completo */
+.logo-line-1::after {
+    content: ' "La Meridiana" S.r.l.';
+    white-space: nowrap;
+}
+.logo-line-2 {
+    display: none;
+}
+
 
 header nav ul {
     list-style: none;
@@ -323,12 +365,19 @@ footer {
         flex-wrap: nowrap;
         align-items: center;
     }
-    header h1 {
-        text-align: left;
+    
+    /* MODIFICHE LOGO RESPONSIVE */
+    .logo-text-container {
         font-size: 1rem;
-        line-height: 1.2;
-        margin-right: 15px; /* Spazio tra titolo e hamburger */
     }
+    .logo-line-1::after {
+        content: ''; /* Rimuove il testo aggiunto per il desktop */
+    }
+    .logo-line-2 {
+        display: block; /* Mostra la seconda riga */
+    }
+
+
     .menu-toggle {
         display: flex;
         flex-shrink: 0;
