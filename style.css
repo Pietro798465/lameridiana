@@ -8,15 +8,15 @@ body {
 }
 
 .container {
-    width: 90%;
-    max-width: 1100px;
+    width: 90%; /* Occupa il 90% della larghezza disponibile */
+    max-width: 1100px; /* Ma non più di 1100px */
     margin: auto;
     padding: 0;
 }
 
 h1, h2, h3 {
     font-weight: 700;
-    color: #004080;
+    color: #004080; /* Blu scuro */
 }
 
 a {
@@ -29,7 +29,7 @@ a:hover {
 
 /* Header */
 header {
-    background: #0d2438;
+    background: #0d2438; /* Blu scuro, come il footer */
     padding: 1rem 20px;
     position: sticky;
     top: 0;
@@ -316,24 +316,32 @@ footer {
 }
 
 @media (max-width: 768px) {
-    header .container { flex-wrap: wrap; }
-    header h1 { margin-bottom: 0; text-align: left; font-size: 1.1rem; }
-    
-    .menu-toggle {
-        display: flex; /* Mostra l'hamburger su mobile */
+    /* NUOVE REGOLE PER L'HEADER MOBILE */
+    header .container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
     }
-
+    header h1 {
+        text-align: left;
+        font-size: 1rem;
+        line-height: 1.2;
+        margin-right: 15px; /* Aggiunge spazio tra titolo e icona */
+    }
+    .menu-toggle {
+        display: flex;
+    }
     header nav {
         width: 100%;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-in-out;
+        /* Fa sì che il menu appaia sotto l'header */
+        flex-basis: 100%; 
     }
-    
     header nav.active {
-        max-height: 300px; /* Altezza sufficiente a contenere i link */
+        max-height: 300px;
     }
-
     header nav ul {
         flex-direction: column;
         width: 100%;
@@ -343,7 +351,8 @@ footer {
     header nav ul li {
         margin: 10px 0;
     }
-    
+    /* FINE NUOVE REGOLE HEADER */
+
     #hero-combined { padding-top: 40px; }
     .hero-content { text-align: center; padding-bottom: 40px; }
     .hero-content h2 { font-size: 2.5rem; }
@@ -363,10 +372,4 @@ footer {
     .service-grid-colored {
         grid-template-columns: 1fr;
     }
-}```
-
-5.  Clicca su **`Commit changes`**.
-
-Adesso lo stile è pronto. Il sito su desktop apparirà identico a prima, ma ora abbiamo la "base" per il nostro menu mobile.
-
-Dimmi "fatto" e passeremo al passo successivo, dove modificheremo l'HTML per aggiungere l'icona hamburger e lo script per farlo funzionare.
+}
